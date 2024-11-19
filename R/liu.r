@@ -44,8 +44,10 @@ liu <- function(q, lambda, h = rep(1,length(lambda)), delta = rep(0,length(lambd
 
   sigmaX <- sqrt(2)*a
   
-  Qq <- pchisq(tstar*sigmaX+muX,df=l,ncp=delta,lower.tail=FALSE)
-
+  Qq1 <- pchisq(tstar*sigmaX+muX,df=l,ncp=delta,lower.tail=FALSE)
+  Qq2 <- pchisq(tstar*sigmaX+muX,df=l,ncp=delta,lower.tail=TRUE)
+  Qq = 2*min(Qq1,Qq2)
+  
   return(Qq)
 
 }
