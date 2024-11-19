@@ -1,3 +1,4 @@
+useDynLib(mixSVG, .registration = TRUE)
 exportPattern("^[[:alpha:]]+")
 import(foreach)
 importFrom("stats", "glm", "median", "p.adjust", "pcauchy", "pchisq",
