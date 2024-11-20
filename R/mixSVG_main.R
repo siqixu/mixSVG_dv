@@ -32,6 +32,7 @@ mixSVG_main <- function (y, X, s_trans, pat_idx, pat_name, perm_sample, libsize,
       
             PK = diag(s_sq/vw) - (X/vw)%*%XVivX_iv%*%t(X/vw*s_sq)
             lambdas = eigen(PK)$values
+            lambdas = lambdas[!is.complex(lambdas)]
             if(method=="davies"){
               pval_v = davies(Tv,lambdas)$Qq
               if(pval_v == 0 | pval_v < 0){
