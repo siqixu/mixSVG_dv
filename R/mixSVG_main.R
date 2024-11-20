@@ -37,11 +37,9 @@ mixSVG_main <- function (y, X, s_trans, pat_idx, pat_name, perm_sample, libsize,
               if(pval_v == 0 | pval_v < 0){
                 pval_v = liumod(Tv,lambdas)
               }
-            }
-            else if(method=="liu"){
+            }else if(method=="liu"){
               pval_v = liu(Tv,lambdas) 
-            }
-            else if(method=="liumod"){
+            }else if(method=="liumod"){
               pval_v = liumod(Tv,lambdas)
             }
             
